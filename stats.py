@@ -12,3 +12,13 @@ def get_num_of_chars(text):
         else:
             num_of_chars[lowered] = 1               #else create new key and set value to one
     return num_of_chars                             #return dictionary
+
+def sort_on(dict):
+    return dict["num"]
+
+def sort_num_of_chars(num_of_chars):
+    sorted_list = []
+    for char in num_of_chars:
+        sorted_list.append({"char": char, "num": num_of_chars[char]})
+    sorted_list.sort(reverse=True, key=sort_on)
+    return sorted_list
