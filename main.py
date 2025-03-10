@@ -2,7 +2,7 @@ import sys
 from stats import get_num_of_words, get_num_of_chars, sort_num_of_chars
 
 def main():
-    filepath = extract_file(sys.argv)                                   #define File
+    filepath = extract_book_path(sys.argv)                  #define File
     text = get_book_text(filepath)                          #extract file as a str
     num_words = get_num_of_words(text)                      #count words in file str
     num_of_chars = get_num_of_chars(text)                   #count characters in file str
@@ -13,7 +13,7 @@ def get_book_text(path):                                    #open file and extra
     with open(path) as f:
         return f.read()
     
-def extract_file(path):
+def extract_book_path(path):
     if len(sys.argv) != 2:
         print("Usage: python3 main.py <path_to_book>")
         sys.exit(1)
